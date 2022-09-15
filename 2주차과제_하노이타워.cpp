@@ -6,7 +6,9 @@ int cnt = 0; // 이동 횟수에 이용.
 void Hanoi(int n, char from, char temp, char to) 
 // n : 원반개수, from : 원래 위치, temp : 임시 장소, to :목적지
 {
-	if (n == 1) {
+	if (n < 1)
+		cout << "ERROR! 1 이상의 숫자를 입력하시오." << endl;
+	else if (n == 1) {
 		cout << n << "번 원반을 " << from << " 에서 " << to << " 로 옮긴다. \n";
 	}
 	else {
@@ -29,5 +31,6 @@ void main()
 
 	Hanoi(n, 'A', 'B', 'C');    // n개의 원반을 'A'에서 'C'로 이동
 
-	cout << "전체 원반 이동 수(원반수 : " << n << ") = " << cnt << endl;
+	if(n>=1)
+		cout << "전체 원반 이동 수(원반수 : " << n << ") = " << cnt << endl;
 }
